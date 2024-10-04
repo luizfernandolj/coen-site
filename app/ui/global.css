@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400&display=swap');
+
+html, body {
+  font-family: 'Century Gothic', sans-serif;
+}
+
+
+@keyframes float1 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes float2 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes float3 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-1.5px); }
+  100% { transform: translateY(0); }
+}
+
+.float1 {
+  animation: float1 2s ease-in-out infinite;
+}
+
+.float2 {
+  animation: float2 2s ease-in-out infinite;
+}
+
+.float3 {
+  animation: float3 2s ease-in-out infinite;
+}
