@@ -1,0 +1,98 @@
+const updatesData: Update[] = [
+  {
+    type: 'Project',
+    title: 'MLQuantify',
+    author: 'Luiz Fernando',
+    description: 'The project gained a thousand dollars of investment.',
+  },
+  {
+    type: 'News',
+    title: 'AI Revolution',
+    author: 'Maria Silva',
+    description: 'New breakthroughs in AI research.',
+  },
+  {
+    type: 'Members',
+    title: 'New Team Member',
+    author: 'John Doe',
+    description: 'Welcome our newest team member to the research group.',
+  },
+  {
+    type: 'Project',
+    title: 'Quantum Computing',
+    author: 'Sarah Lee',
+    description: 'Quantum computing is making waves in the industry.',
+  },
+  {
+    type: 'News',
+    title: 'AI for Healthcare',
+    author: 'Elena Rocha',
+    description: 'AI is transforming the healthcare industry.',
+  },
+  {
+    type: 'Members',
+    title: 'New Collaboration',
+    author: 'Carlos Souza',
+    description: 'We have partnered with leading universities for joint research.',
+  },
+  {
+    type: 'News',
+    title: 'AI for Healthcare',
+    author: 'Elena Rocha',
+    description: 'AI is transforming the healthcare industry.',
+  },
+  {
+    type: 'Members',
+    title: 'New Collaboration',
+    author: 'Carlos Souza',
+    description: 'We have partnered with leading universities for joint research.',
+  },
+  {
+    type: 'News',
+    title: 'AI for Healthcare',
+    author: 'Elena Rocha',
+    description: 'AI is transforming the healthcare industry.',
+  },
+  {
+    type: 'Members',
+    title: 'New Collaboration',
+    author: 'Carlos Souza',
+    description: 'We have partnered with leading universities for joint research.',
+  },
+  {
+    type: 'News',
+    title: 'AI for Healthcare',
+    author: 'Elena Rocha',
+    description: 'AI is transforming the healthcare industry.',
+  },
+  {
+    type: 'Members',
+    title: 'New Collaboration',
+    author: 'Carlos Souza',
+    description: 'We have partnered with leading universities for joint research.',
+  },
+  {
+    type: 'News',
+    title: 'AI for Healthcare',
+    author: 'Elena Rocha',
+    description: 'AI is transforming the healthcare industry.',
+  },
+  {
+    type: 'Members',
+    title: 'New Collaboration',
+    author: 'Carlos Souza',
+    description: 'We have partnered with leading universities for joint research.',
+  },
+  {
+    type: 'News',
+    title: 'AI for Healthcare',
+    author: 'Elena Rocha',
+    description: 'AI is transforming the healthcare industry.',
+  },
+  {
+    type: 'Members',
+    title: 'New Collaboration',
+    author: 'Carlos Souza',
+    description: 'We have partnered with leading universities for joint research.',
+  },
+];

@@ -13,6 +13,7 @@ const links = [
   { name: 'Projects', href: '/projects' },
   { name: 'Partners', href: '/partners' },
   { name: 'Publications', href: '/publications' },
+  { name: 'Updates', href: '/updates' },
   { name: 'Photos', href: '/photos' },
 ];
 

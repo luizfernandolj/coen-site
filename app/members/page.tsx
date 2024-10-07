@@ -15,7 +15,7 @@ const membersData = [
     profilePicture: "/persons/andre.jpg" // Caminho da imagem do perfil
   },
   {
-    name: "Barabara Lepretti",
+    name: "Barbara Lepretti",
     position: "Cordenator",
     active: true,
     urlLinkedin: "https://linkedin.com/in/michelle",
