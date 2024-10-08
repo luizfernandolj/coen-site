@@ -1,0 +1,76 @@
+[
+    {
+        "title": "MLQuantify",
+        "author": "Luiz Fernando Luth Junior",
+        "area": "Machine Learning",
+        "specialization": "Quantification",
+        "description": "MLQuantify is a Python library used for quantification in machine learning datasets, focusing on API integration and automated dataset evaluation.",
+        "links": {
+            "github": "https://github.com/",
+            "pypi": "https://pypi.org/"
+        },
+        "updates": [
+            {
+                "title": "Funding Received",
+                "date": "2024-01-10",
+                "description": "Received funding to support research in machine learning quantification techniques."
+            },
+            {
+                "title": "API Integration",
+                "date": "2024-03-15",
+                "description": "Successfully integrated the project with a quantification API for real-time data analysis."
+            },
+            {
+                "title": "New Dataset Module",
+                "date": "2024-05-05",
+                "description": "Developed a new module that improves dataset quantification accuracy and performance."
+            },
+            {
+                "title": "Research Publication",
+                "date": "2024-07-22",
+                "description": "Submitted research paper on innovative approaches in dataset quantification to a leading ML conference."
+            }
+        ],
+        "images": [
+            { "src": "images/photo1.jpg", "name": "foto tirada no laboratorio" },
+            { "src": "images/photo2.jpg", "name": "foto desenhada por membro Luiz Fernando" }
+        ]
+    },
+    {
+        "title": "DataAnalyzer",
+        "author": "John Doe",
+        "area": "Data Science",
+        "specialization": "Data Analysis",
+        "description": "DataAnalyzer focuses on providing tools for large-scale data processing, with emphasis on efficient algorithms and scalability.",
+        "links": {
+            "github": "https://github.com/",
+            "pypi": "https://pypi.org/"
+        },
+        "updates": [
+            {
+                "title": "Initial Funding",
+                "date": "2023-11-30",
+                "description": "Secured initial funding to begin research and development of the data analysis platform."
+            },
+            {
+                "title": "Prototype Developed",
+                "date": "2024-02-17",
+                "description": "The prototype of the data analysis engine was completed, focusing on speed and scalability."
+            },
+            {
+                "title": "Algorithm Testing",
+                "date": "2024-04-10",
+                "description": "Began testing new algorithms for more efficient data processing and analysis."
+            },
+            {
+                "title": "Conference Paper",
+                "date": "2024-06-18",
+                "description": "Paper on novel data analysis techniques submitted to a top-tier data science conference."
+            }
+        ],
+        "images": [
+            { "src": "images/photo3.jpg", "name": "foto tirada no laboratorio" },
+            { "src": "images/photo4.jpg", "name": "foto desenhada por membro Rafael" }
+        ]
+    }
+]

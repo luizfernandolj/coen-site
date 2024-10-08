@@ -22,7 +22,7 @@ const MapContact: React.FC = () => {
       <div className="w-full md:w-1/2 p-4 flex justify-center">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345096313!2d-54.57059258555569!3d-25.52337848393937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d0376bcf11e0c9%3A0x154118f3ca0cf3e9!2sAv.%20Tancredo%20Neves%2C%206731%20-%20Jardim%20Itaipu%2C%20Foz%20do%20Igua%C3%A7u%20-%20PR%2C%2058867-900%2C%20Brasil!5e0!3m2!1sen!2sus!4v1696389072412!5m2!1sen!2sus"
-          className="w-full h-64 md:w-3/4 md:h-96" // Largura total em telas menores, 3/4 da tela em maiores
+          className="w-full h-64 md:w-3/4 md:h-80" // Largura total em telas menores, 3/4 da tela em maiores
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"

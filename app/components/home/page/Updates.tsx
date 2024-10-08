@@ -1,15 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
-import Image from 'next/image';
 
-interface Update {
-  type: string;
-  title: string;
-  author: string;
-  description: string;
-}
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const getColorByType = (type: string) => {
   switch (type) {
@@ -24,233 +24,107 @@ const getColorByType = (type: string) => {
   }
 };
 
-const updatesData: Update[] = [
-  {
-    type: 'Project',
-    title: 'MLQuantify',
-    author: 'Luiz Fernando',
-    description: 'The project gained a thousand dollars of investment.',
-  },
-  {
-    type: 'News',
-    title: 'AI Revolution',
-    author: 'Maria Silva',
-    description: 'New breakthroughs in AI research.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  {
-    type: 'Project',
-    title: 'Quantum Computing',
-    author: 'Sarah Lee',
-    description: 'Quantum computing is making waves in the industry.',
-  },
-  {
-    type: 'Project',
-    title: 'Quantum Computing',
-    author: 'Sarah Lee',
-    description: 'Quantum computing is making waves in the industry.',
-  },
-  {
-    type: 'Project',
-    title: 'Quantum Computing',
-    author: 'Sarah Lee',
-    description: 'Quantum computing is making waves in the industry.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  {
-    type: 'News',
-    title: 'AI Revolution',
-    author: 'Maria Silva',
-    description: 'New breakthroughs in AI research.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  {
-    type: 'News',
-    title: 'AI Revolution',
-    author: 'Maria Silva',
-    description: 'New breakthroughs in AI research.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  {
-    type: 'News',
-    title: 'AI Revolution',
-    author: 'Maria Silva',
-    description: 'New breakthroughs in AI research.',
-  },
-  {
-    type: 'Project',
-    title: 'Quantum Computing',
-    author: 'Sarah Lee',
-    description: 'Quantum computing is making waves in the industry.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  {
-    type: 'Project',
-    title: 'MLQuantify',
-    author: 'Luiz Fernando',
-    description: 'The project gained a thousand dollars of investment.',
-  },
-  {
-    type: 'News',
-    title: 'AI Revolution',
-    author: 'Maria Silva',
-    description: 'New breakthroughs in AI research.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  {
-    type: 'Project',
-    title: 'Quantum Computing',
-    author: 'Sarah Lee',
-    description: 'Quantum computing is making waves in the industry.',
-  },
-  {
-    type: 'Project',
-    title: 'Quantum Computing',
-    author: 'Sarah Lee',
-    description: 'Quantum computing is making waves in the industry.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  {
-    type: 'News',
-    title: 'AI Revolution',
-    author: 'Maria Silva',
-    description: 'New breakthroughs in AI research.',
-  },
-  {
-    type: 'Members',
-    title: 'New Team Member',
-    author: 'John Doe',
-    description: 'Welcome our newest team member to the research group.',
-  },
-  // Adicione mais itens aqui para testar
-];
+const MyCarousel = () => {
+  const [navigationCount, setNavigationCount] = useState(0);
+  const [data, setData] = useState<any[]>([]); // Inicializando com um array vazio
+  const [loading, setLoading] = useState(true);
 
-export default function UpdatesPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const maxItemsToShow = 4;
-  const totalItems = updatesData.length;
+  useEffect(() => {
+    // Fetch the JSON data from the public folder
+    fetch('/jsons/coen/updates.json')
+      .then((response) => response.json())
+      .then((jsonData) => {
+        setData(jsonData.slice(0, 12)); // Limita a 12 elementos
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching JSON data:', error);
+        setLoading(false);
+      });
+  }, []);
 
-  // Verificar se não há itens no JSON
-  if (totalItems === 0) {
-    return (
-      <div className="p-6">
-        <h2 className="text-4xl font-normal mb-10 indent-10">See last update projects</h2>
-        <p className="text-center text-lg text-gray-600">No updates available at the moment.</p>
-      </div>
-    );
+  const handleSlideChange = (swiper: any) => {
+    if (navigationCount < 3) {
+      setNavigationCount(navigationCount + 1);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>; // Exibe um loader enquanto os dados são carregados
   }
 
-  // Definir o número máximo de transições como 4 (12 itens no total)
-  const maxIterations = Math.min(Math.ceil(totalItems / maxItemsToShow), 4);
-
-  // Avançar no carrossel
-  const nextSlide = () => {
-    if (currentIndex < maxIterations - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  // Retroceder no carrossel
-  const prevSlide = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  // Calcula se deve mostrar o botão "Ver Mais" (mostra quando tem mais de 12 itens)
-  const shouldShowSeeMore = totalItems > 12 && currentIndex === maxIterations - 1;
-
   return (
-    <div className="p-6">
-      <h2 className="text-4xl font-normal mb-10 indent-10">See last update projects</h2>
-
-      {/* Contêiner do carrossel */}
-      <div className="relative w-full flex flex-col items-center">
-        <div className="flex justify-center gap-4">
-          {updatesData
-            .slice(currentIndex * maxItemsToShow, (currentIndex + 1) * maxItemsToShow)
-            .map((update, index) => (
-              <div
-                key={index}
-                className="w-full sm:w-80 h-auto bg-white shadow-lg rounded-lg flex flex-col border-2 border-gray-300"
-              >
-                <div
-                  className={`${getColorByType(update.type)} text-white p-2 rounded-t-lg text-center text-lg font-semibold`}
-                >
-                  {update.type}
+    <div className="flex flex-col items-center w-full">
+      <h2 className="text-2xl font-normal mb-10">See Last Updates</h2>
+      <div className="relative w-[80%] h-auto px-10 pb-4">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          initialSlide={0}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            disabledClass: navigationCount >= 3 ? 'swiper-button-disabled' : 'swiper-button-enabled',
+          }}
+          pagination={{ clickable: true, el: '.swiper-pagination' }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={(swiper) => handleSlideChange(swiper)}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+              spaceBetween: 40,
+            },
+            1280: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              spaceBetween: 50,
+            },
+          }}
+          style={{ paddingLeft: '20px', paddingRight: '10px', paddingTop: '10px' }}
+        >
+          {data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="shadow-lg rounded-lg h-48 w-72 bg-white shadow-2xl shadow-black mb-10 transition-transform duration-300 transform hover:scale-110">
+                <div className={`p-2 ${getColorByType(item.type)} text-white rounded-t-lg`}>
+                  <span className="text-sm font-semibold">{item.type}</span>
                 </div>
-                <div className="p-8 text-center flex-1">
-                  <h3 className="text-2xl font-semibold">{update.title}</h3>
-                  <p className="text-md text-gray-600">Author: {update.author}</p>
-                  <p className="mt-4 text-md">{update.description}</p>
+                <div className="p-4">
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-gray-600">Date: {item.date}</p>
+                  <p className="mt-2 text-gray-800">{item.shortDescription}</p>
                 </div>
               </div>
-            ))}
-        </div>
-
-        {/* Botões de navegação (centralizados verticalmente) */}
-        <div className="flex mt-10 items-center gap-4">
-          {currentIndex > 0 && (
-            <button
-              onClick={prevSlide}
-              className="top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow-lg"
-            >
-              <Image src="/arrow.svg" alt="Previous" width={40} height={40} />
-            </button>
-          )}
-                  {/* Botão "Ver Mais" se houver mais de 12 itens */}
-          {shouldShowSeeMore && (
-            <div className="">
-              <Link href="/updates" className="top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-black py-3 px-3 rounded-full text-xl">
-                See More
-              </Link>
-            </div>
-          )}
-          {!shouldShowSeeMore && currentIndex < maxIterations - 1 && (
-            <button
-              onClick={nextSlide}
-              className="top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow-lg"
-            >
-              <Image src="/arrow.svg" alt="Next" width={40} height={40} />
-            </button>
-          )}
-        </div>
+            </SwiperSlide>
+          ))}
+          <SwiperSlide>
+            <Link href="/updates">
+              <div className="shadow-lg shadow-2xl shadow-black rounded-lg h-48 w-72 bg-white flex items-center justify-center mb-10 transition-transform duration-300 transform hover:scale-110">
+                <div className="flex flex-col items-center justify-center p-4">
+                  <span className="text-black text-2xl font-normal">
+                    See More
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+        </Swiper>
+        <div className="swiper-pagination mt-1"></div>
+        <div className={`swiper-button-prev custom-swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 'swiper-button-disabled' : 'swiper-button-enabled'}`}></div>
+        <div className={`swiper-button-next custom-swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 'swiper-button-disabled' : 'swiper-button-enabled'}`}></div>
       </div>
     </div>
   );
-}
+};
+
+export default MyCarousel;

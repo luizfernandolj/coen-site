@@ -1,0 +1,101 @@
+[
+    {
+        "name": "André Gustavo Maletzke",
+        "position": "Cordenator",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/andre.jpg"
+    },
+    {
+        "name": "Barbara Lepretti",
+        "position": "Cordenator",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/person.jpg"
+    },
+    {
+        "name": "William",
+        "position": "Collaborator",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/person.jpg"
+    },
+    {
+        "name": "Rafael Henrique da Rosa",
+        "position": "Master Student",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/rafael.jpg"
+    },
+    {
+        "name": "Guilherme Bachega Gomes",
+        "position": "Master Student",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/guilherme.jpg"
+    },
+    {
+        "name": "João Pedro Ortega",
+        "position": "Master Student",
+        "active": false,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/joaopedro.jpg"
+    },
+    {
+        "name": "Luiz Fernando Luth Junior",
+        "position": "Student",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/luiz.jpg"
+    },
+    {
+        "name": "Yuri Ricardo Bueno",
+        "position": "Student",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/yuri.jpg"
+    },
+    {
+        "name": "Daniel Zonta Ojeda",
+        "position": "Student",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/daniel.jpg"
+    },
+    {
+        "name": "Matheus",
+        "position": "Student",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/person.jpg"
+    },
+    {
+        "name": "Deivid",
+        "position": "Student",
+        "active": true,
+        "urlLinkedin": "https://linkedin.com/in/michelle",
+        "urlGithub": "https://github.com/michelle",
+        "urlLattes": "https://lattes.cnpq.br/michelle",
+        "profilePicture": "/persons/person.jpg"
+    }
+]

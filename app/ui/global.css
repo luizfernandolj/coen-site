@@ -39,3 +39,26 @@ html, body {
 .float3 {
   animation: float3 2s ease-in-out infinite;
 }
+
+
+@keyframes float {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+@keyframes float-reverse {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.hover-float {
+  transition: transform 0.15s ease-in;
+}
+
+.hover-float:hover {
+  animation: float 0.15s ease-in forwards;
+}
+
+.hover-float:not(:hover) {
+  animation: float-reverse 0.15s ease-out forwards;
+}
