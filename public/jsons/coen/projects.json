@@ -34,6 +34,12 @@
         "images": [
             { "src": "images/photo1.jpg", "name": "foto tirada no laboratorio" },
             { "src": "images/photo2.jpg", "name": "foto desenhada por membro Luiz Fernando" }
+        ],
+        "teamMembers": ["Luiz Fernando Luth Junior", "Member A", "Member B"],
+        "publications": [
+            {
+                "citation": "BUENO, Y. R. G. M. ; NADAI, B. L. ; SCHAEFER, R. L. ; MALETZKE, A.G. . Armadilha inteligente para a captura e monitoramento de vetores de doenças usando inteligência artificial (EN: Quantifying Mosquitoes Using Smartphones and Artificial Intelligence). In: 9º EAICTI - Encontro Anual de Iniciação Científica, Tecnológica e Inovação: Mulheres na Ciência, 2023. Anais do 9º EAICTI - Encontro Anual de Iniciação Científica, Tecnológica e Inovação: Mulheres na Ciência, 2023."
+            }
         ]
     },
     {
@@ -71,6 +77,12 @@
         "images": [
             { "src": "images/photo3.jpg", "name": "foto tirada no laboratorio" },
             { "src": "images/photo4.jpg", "name": "foto desenhada por membro Rafael" }
+        ],
+        "teamMembers": ["Guilherme", "Rafael", "João Pedro Ortega"],
+        "publications": [
+            {
+                "citation": "AUTOR B. Título do Paper B. Ano. Detalhes sobre a publicação."
+            }
         ]
     }
 ]

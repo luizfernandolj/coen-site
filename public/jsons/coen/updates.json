@@ -9,6 +9,22 @@
     },
     {
         "type": "Members",
+        "title": "Internship Program",
+        "shortDescription": "Launching our new internship program.",
+        "longDescription": "Our internship program offers hands-on experience and mentorship for aspiring professionals.",
+        "date": "06/07/2025",
+        "imgs": []
+    },
+    {
+        "type": "News",
+        "title": "Product Launch",
+        "shortDescription": "We have launched a new product.",
+        "longDescription": "Our new product offers innovative features and capabilities to meet customer needs.",
+        "date": "02/06/2025",
+        "imgs": []
+    },
+    {
+        "type": "Members",
         "title": "Team Expansion",
         "shortDescription": "We welcomed new members to our team.",
         "longDescription": "Our team has expanded to include experts in various fields to enhance our project development capabilities.",
@@ -20,7 +36,7 @@
         "title": "New Feature Release",
         "shortDescription": "We have released a new feature.",
         "longDescription": "Our latest feature includes several enhancements and bug fixes to improve user experience.",
-        "date": "09/15/2024",
+        "date": "09/11/2024",
         "imgs": []
     },
     {
@@ -28,7 +44,7 @@
         "title": "New Team Leader",
         "shortDescription": "Introducing our new team leader.",
         "longDescription": "We are excited to welcome our new team leader who brings a wealth of experience and expertise.",
-        "date": "01/20/2025",
+        "date": "01/12/2025",
         "imgs": []
     },
     {
@@ -36,7 +52,7 @@
         "title": "Product Launch",
         "shortDescription": "We have launched a new product.",
         "longDescription": "Our new product offers innovative features and capabilities to meet customer needs.",
-        "date": "02/14/2025",
+        "date": "02/05/2025",
         "imgs": []
     },
     {
@@ -44,7 +60,7 @@
         "title": "Internship Program",
         "shortDescription": "Launching our new internship program.",
         "longDescription": "Our internship program offers hands-on experience and mentorship for aspiring professionals.",
-        "date": "06/20/2025",
+        "date": "06/07/2025",
         "imgs": []
     },
     {
@@ -84,7 +100,7 @@
         "title": "Sustainability Initiative",
         "shortDescription": "Launching our sustainability initiative.",
         "longDescription": "Our new initiative focuses on reducing our environmental impact and promoting sustainability.",
-        "date": "03/15/2026",
+        "date": "03/11/2026",
         "imgs": []
     },
     {
@@ -100,7 +116,7 @@
         "title": "Project Milestone",
         "shortDescription": "Reaching a project milestone.",
         "longDescription": "We have successfully reached a major milestone in our ongoing project.",
-        "date": "06/15/2026",
+        "date": "06/12/2026",
         "imgs": []
     },
     {
@@ -108,7 +124,7 @@
         "title": "Project Completion",
         "shortDescription": "Completing a project.",
         "longDescription": "We are proud to announce the completion of our latest project, delivering great results.",
-        "date": "07/20/2026",
+        "date": "07/05/2026",
         "imgs": []
     },
     {
@@ -116,7 +132,7 @@
         "title": "Project Planning",
         "shortDescription": "Planning a new project.",
         "longDescription": "We are in the planning stages of a new project that will bring significant improvements.",
-        "date": "08/25/2026",
+        "date": "08/07/2026",
         "imgs": []
     },
     {
@@ -124,7 +140,7 @@
         "title": "Project Update",
         "shortDescription": "Providing an update on our project.",
         "longDescription": "Here is the latest update on our ongoing project, including progress and next steps.",
-        "date": "09/30/2026",
+        "date": "09/01/2026",
         "imgs": []
     },
     {
@@ -132,7 +148,7 @@
         "title": "Project Collaboration",
         "shortDescription": "Collaborating on a project.",
         "longDescription": "We are collaborating with industry experts on a new project to enhance our offerings.",
-        "date": "10/15/2026",
+        "date": "10/02/2026",
         "imgs": []
     },
     {
@@ -140,7 +156,7 @@
         "title": "Project Launch",
         "shortDescription": "Launching a new project.",
         "longDescription": "We are excited to launch a new project that will drive innovation and growth.",
-        "date": "11/20/2026",
+        "date": "11/10/2026",
         "imgs": []
     },
     {
@@ -164,7 +180,7 @@
         "title": "Project Funding",
         "shortDescription": "Securing funding for a project.",
         "longDescription": "We have secured funding for a new project that will enhance our capabilities.",
-        "date": "02/20/2027",
+        "date": "02/09/2027",
         "imgs": []
     }
 ]

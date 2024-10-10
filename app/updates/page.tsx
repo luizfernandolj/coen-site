@@ -119,23 +119,25 @@ export default function UpdatesPage() {
         <div key={year} className="mb-6">
           <h3 className="text-3xl font-semibold mb-4">{year}</h3>
           <div className="flex flex-wrap gap-4">
-            {updatesByYear[year].map((update, index) => (
-              <div 
-                key={index} 
-                className="w-full sm:w-80 h-auto bg-white shadow-lg rounded-lg flex flex-col cursor-pointer hover-float"
-                onClick={() => setSelectedUpdate(update)} // Abre o popup ao clicar
-              >
-                {/* Cor superior de acordo com o tipo */}
-                <div className={`${getColorByType(update.type)} text-white p-2 rounded-t-lg text-center text-lg font-semibold`}>
-                  {update.type}
+            {updatesByYear[year]
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Ordenar por data decrescente
+              .map((update, index) => (
+                <div 
+                  key={index} 
+                  className="w-full sm:w-80 h-auto bg-white shadow-lg rounded-lg flex flex-col cursor-pointer hover-float"
+                  onClick={() => setSelectedUpdate(update)} // Abre o popup ao clicar
+                >
+                  {/* Cor superior de acordo com o tipo */}
+                  <div className={`${getColorByType(update.type)} text-white p-2 rounded-t-lg text-center text-lg font-semibold`}>
+                    {update.type}
+                  </div>
+                  <div className="p-8 text-center flex-1">
+                    <h4 className="text-2xl font-semibold">{update.title}</h4>
+                    <p className="text-md text-gray-600">Date: {update.date}</p>
+                    <p className="mt-4 text-md">{update.shortDescription}</p>
+                  </div>
                 </div>
-                <div className="p-8 text-center flex-1">
-                  <h4 className="text-2xl font-semibold">{update.title}</h4>
-                  <p className="text-md text-gray-600">Date: {update.date}</p>
-                  <p className="mt-4 text-md">{update.shortDescription}</p>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       ))}

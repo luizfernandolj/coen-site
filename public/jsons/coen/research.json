@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Artificial Intelligence",
+        "color": "bg-blueuni",
+        "description": "Artificial Intelligence (AI) involves the simulation of human intelligence in machines. We use AI to develop smart systems that can perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation."
+    },
+    {
+        "name": "Machine Learning",
+        "color": "bg-green-500",
+        "description": "Machine Learning (ML) is a subset of AI that focuses on the development of algorithms that allow computers to learn from and make predictions based on data. We use ML to create models that can identify patterns and make decisions with minimal human intervention."
+    },
+    {
+        "name": "Data Science",
+        "color": "bg-bluelight",
+        "description": "Data Science involves the extraction of knowledge and insights from structured and unstructured data. We use data science techniques to analyze large datasets, uncover hidden patterns, and inform decision-making processes."
+    },
+    {
+        "name": "Entomology",
+        "color": "bg-reduni",
+        "description": "Entomology is the scientific study of insects. We use entomology to understand insect behavior, ecology, and their role in the environment, as well as to develop methods for pest control and disease prevention."
+    }
+]

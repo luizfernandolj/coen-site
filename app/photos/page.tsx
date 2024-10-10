@@ -1,16 +1,24 @@
-// pages/photos.tsx
+'use client';
 
-import React from 'react';
-
-const photos = [
-  '/images/photo1.jpg',
-  '/images/photo2.jpg',
-  '/images/photo3.jpg',
-  '/images/photo4.jpg',
-  '/images/photo5.jpg',
-];
+import React, { useEffect, useState } from 'react';
 
 const Photos: React.FC = () => {
+  const [photos, setPhotos] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      try {
+        const response = await fetch('/jsons/coen/photos.json');
+        const data = await response.json();
+        setPhotos(data);
+      } catch (error) {
+        console.error('Error fetching photos:', error);
+      }
+    };
+
+    fetchPhotos();
+  }, []);
+
   return (
     <div className="bg-gray-100 min-h-screen p-8">
       <h1 className="text-4xl font-bold text-center mb-8">Laboratory Photos</h1>

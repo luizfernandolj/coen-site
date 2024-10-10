@@ -5,11 +5,17 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const positions = ["All", "Cordenator", "Collaborator", "Master Student", "Student"];
+const positionPriority = {
+  "Cordenator": 1,
+  "Collaborator": 2,
+  "Master Student": 3,
+  "Student": 4,
+};
 
 export default function Members() {
   interface Member {
     name: string;
-    position: string;
+    position: keyof typeof positionPriority;
     profilePicture: string;
     active: boolean;
     urlLinkedin: string;
@@ -34,9 +40,14 @@ export default function Members() {
       });
   }, []);
 
+  // Ordena os membros pela prioridade do cargo
+  const sortedMembers = membersData.sort((a, b) => {
+    return positionPriority[a.position] - positionPriority[b.position];
+  });
+
   const filteredMembers = selectedPosition === "All" 
-    ? membersData 
-    : membersData.filter(member => member.position === selectedPosition);
+    ? sortedMembers 
+    : sortedMembers.filter(member => member.position === selectedPosition);
 
   if (loading) {
     return <div>Loading...</div>;

@@ -13,7 +13,7 @@ import 'swiper/css/scrollbar';
 
 const getColorByType = (type: string) => {
   switch (type) {
-    case 'Project':
+    case 'Projects':
       return 'bg-blueuni';
     case 'News':
       return 'bg-reduni';
@@ -26,7 +26,7 @@ const getColorByType = (type: string) => {
 
 const MyCarousel = () => {
   const [navigationCount, setNavigationCount] = useState(0);
-  const [data, setData] = useState<any[]>([]); // Inicializando com um array vazio
+  const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,7 +34,9 @@ const MyCarousel = () => {
     fetch('/jsons/coen/updates.json')
       .then((response) => response.json())
       .then((jsonData) => {
-        setData(jsonData.slice(0, 12)); // Limita a 12 elementos
+        // Sort the data by date in descending order
+        const sortedData = jsonData.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        setData(sortedData.slice(0, 11)); // Limita a 12 elementos
         setLoading(false);
       })
       .catch((error) => {

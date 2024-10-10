@@ -1,82 +1,85 @@
-import Link from 'next/link';
+'use client';
 
-// Simulação de carregamento do arquivo JSON
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
 interface Publication {
-  citation: string; // Adicionando a citação
+  citation: string;
   link: string;
   date: string;
+  researchArea: string;
 }
 
-const publicationsData: Publication[] = [
-  {
-    citation: "BUENO, Y. R. G. M. ; NADAI, B. L. ; SCHAEFER, R. L. ; MALETZKE, A.G. . Armadilha inteligente para a captura e monitoramento de vetores de doenças usando inteligência artificial (EN: Quantifying Mosquitoes Using Smartphones and Artificial Intelligence). In: 9º EAICTI - Encontro Anual de Iniciação Científica, Tecnológica e Inovação: Mulheres na Ciência, 2023. Anais do 9º EAICTI - Encontro Anual de Iniciação Científica, Tecnológica e Inovação: Mulheres na Ciência, 2023.",
-    link: "https://example.com/research-paper-a",
-    date: "2023-03-15",
-  },
-  {
-    citation: "AUTOR B. Título do Paper B. Ano. Detalhes sobre a publicação.",
-    link: "https://example.com/research-paper-b",
-    date: "2024-01-10",
-  },
-  {
-    citation: "AUTOR C. Título do Paper C. Ano. Detalhes sobre a publicação.",
-    link: "https://example.com/research-paper-c",
-    date: "2024-05-22",
-  },
-  {
-    citation: "AUTOR TESTE. Título do Teste. Ano. Detalhes sobre a publicação.",
-    link: "https://example.com/test",
-    date: "2021-05-22",
-  },
-  {
-    citation: "AUTOR TESTE. Título do Teste. Ano. Detalhes sobre a publicação.",
-    link: "https://example.com/test",
-    date: "2021-05-22",
-  },
-  {
-    citation: "AUTOR TESTE. Título do Teste. Ano. Detalhes sobre a publicação.",
-    link: "https://example.com/test",
-    date: "2024-05-22",
-  },
-  {
-    citation: "AUTOR TESTE. Título do Teste. Ano. Detalhes sobre a publicação.",
-    link: "https://example.com/test",
-    date: "2023-05-22",
-  },
-];
+interface ResearchArea {
+  name: string;
+  color: string;
+  description: string;
+}
 
-// Função para agrupar publicações por ano
-const groupByYear = (publications: Publication[]) => {
+const groupByAreaAndYear = (publications: Publication[]) => {
   return publications.reduce((acc, publication) => {
     const year = new Date(publication.date).getFullYear();
-    if (!acc[year]) {
-      acc[year] = [];
+    if (!acc[publication.researchArea]) {
+      acc[publication.researchArea] = {};
     }
-    acc[year].push(publication);
+    if (!acc[publication.researchArea][year]) {
+      acc[publication.researchArea][year] = [];
+    }
+    acc[publication.researchArea][year].push(publication);
     return acc;
-  }, {} as Record<number, Publication[]>);
+  }, {} as Record<string, Record<number, Publication[]>>);
 };
 
 export default function Publications() {
-  const groupedPublications = groupByYear(publicationsData);
-  
-  // Ordenando os anos em ordem decrescente
-  const sortedYears = Object.keys(groupedPublications).sort((a, b) => Number(b) - Number(a));
+  const [researchAreas, setResearchAreas] = useState<ResearchArea[]>([]);
+  const [publicationsData, setPublicationsData] = useState<Publication[]>([]);
+
+  useEffect(() => {
+    const fetchResearchAreas = async () => {
+      try {
+        const response = await fetch('/jsons/coen/research.json');
+        const data = await response.json();
+        setResearchAreas(data);
+      } catch (error) {
+        console.error('Error fetching research areas:', error);
+      }
+    };
+
+    const fetchPublications = async () => {
+      try {
+        const response = await fetch('/jsons/coen/publications.json');
+        const data = await response.json();
+        setPublicationsData(data);
+      } catch (error) {
+        console.error('Error fetching publications:', error);
+      }
+    };
+
+    fetchResearchAreas();
+    fetchPublications();
+  }, []);
+
+  const groupedPublications = groupByAreaAndYear(publicationsData);
 
   return (
     <div className="container mx-auto p-2 my-36 min-h-screen">
-      {sortedYears.map((year) => (
-        <div key={year} className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">{year}</h2>
-          <div className="flex flex-col gap-4">
-            {groupedPublications[Number(year)].map((publication: Publication, index: number) => (
-              <div key={index} className="border bg-white rounded-lg shadow-md p-4">
-                <Link href={publication.link} className="text-base font-normal mb-2 hover:underline">
-                  {publication.citation}
-                </Link>{/* Mostrando a citação */}
+      {Object.keys(groupedPublications).map((area) => (
+        <div key={area} className="mb-8 bg-white rounded-lg p-4">
+          <h2 className="text-2xl font-bold mb-4">{area}</h2>
+          {Object.keys(groupedPublications[area]).sort().map((year) => (
+            <div key={year} className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">{year}</h3>
+              <div className="flex flex-col gap-4">
+                {groupedPublications[area][Number(year)].map((publication: Publication, index: number) => (
+                  <div key={index} className="border bg-white p-4">
+                    <Link href={publication.link} className="text-base font-normal mb-2 hover:underline">
+                      {publication.citation}
+                    </Link>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       ))}
     </div>
